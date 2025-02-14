@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SpiderHub - La mejor colección de películas de Spider-Man en un solo lugar.">
+    <meta name="keywords" content="Spider-Man, películas, Marvel, SpiderHub, cine, no way home, marvel, hombre araña">
+    <meta name="author" content="Anabel Gerez">
+    <link rel="icon" href="../public/images/logospider.png"sizes="32x32" type="image/png">
+    <title>Spider-Hub - Películas de Spider-Man</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+</head>
+<body>
+<main id="main-container">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg" role="navigation">
+        <div class="container">
+            <a class="navbar-brand" href="#home" aria-label="Ir al inicio de SpiderHub">
+                <img src="../public/images/logo.png" alt="Spider-Hub Logo" width="189" onerror="this.src='';" aria-hidden="true">
+            </a>
+            <div class="collapse navbar-collapse ms-auto" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#carouselExample">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#filter">GALERIA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#info">CREDITOS</a></li>
+                </ul>
+            </div>
+            <button class="darkModeToggle" id="darkModeToggle" onclick="toggleDarkMode()">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Carrusel -->
+    <section id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-item active">
+            <picture>
+                <source srcset="../public/images/slide1.webp" media="(max-width: 1024px)" loading="lazy" link rel="preload">
+                <img src="../public/images/1.webp" loading="lazy" class="d-block w-100" alt="Spider-Man 1" link rel="preload">
+            </picture>
+            <div class="carousel-caption1">
+                <p class="title-caption1">El Legado de un Héroe Arácnido</p>
+                <p>Desde su debut en los cómics en 1962, este icónico personaje ha cautivado a generaciones...</p>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <picture>
+                <source srcset="../public/images/slide2.webp" media="(max-width: 1024px)" loading="lazy" link rel="preload">
+                <img src="../public/images/2.webp" loading="lazy" class="d-block w-100" alt="Spider-Man 2" link rel="preload">
+            </picture>
+            <div class="carousel-caption2">
+                <p class="title-caption2">Más Que un Superhéroe: Un Símbolo Cultural</p>
+                <p>No solo es un lanzador de telarañas; es un ícono que ha inspirado videojuegos, series animadas y hasta memes. Su mensaje de responsabilidad y resiliencia resuena en audiencias de todas las edades, convirtiéndolo en un pilar de la cultura pop moderna.</p>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev" aria-label="Película anterior">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next" aria-label="Siguiente película">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </section>
+
+    <!-- Contenido Principal -->
+    <section class="banner">
+        <div class="banner-content">
+            <img src="../public/images/logospider.png" loading="lazy" alt="Logo" class="logo-banner">
+            <div class="separator"></div>
+            <p class="text">Desde el clásico Spider-Man de 2002 hasta el asombroso No Way Home, cada película nos ha enseñado que con gran poder, viene una gran responsabilidad. Explora la evolución del héroe arácnido a través de sus momentos más épicos en la gran pantalla.</p>
+        </div>
+    </section>
+
+    <section class="galeria">
+        <div class="container mb-4">
+            <div class="filters-search-container">
+                <div class="sort-container" id="filter">
+                    <select id="sortSelect" class="form-select" aria-label="Ordenar películas">
+                        <option value="">Ordenar por...</option>
+                        <option value="rank-asc">Rank (menor a mayor)</option>
+                        <option value="rank-desc">Rank (mayor a menor)</option>
+                        <option value="title-asc">Título (A-Z)</option>
+                        <option value="title-desc">Título (Z-A)</option>
+                        <option value="year-newest">Año (más reciente primero)</option>
+                        <option value="year-oldest">Año (más antiguo primero)</option>
+                    </select>
+                </div>
+
+                <div id="moviesContainer"></div>
+
+                <div class="search-container">
+                    <div class="input-group">
+                        <input type="text" id="searchBar" class="form-control" placeholder="Buscar por título o actores..." aria-label="Buscar película">
+                        <button class="btn btn-primary btn-search" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="loading" class="d-none">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Cargando películas...</span>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="alert alert-danger d-none" id="errorMessage" role="alert">
+                <i class="fas fa-exclamation-circle me-2"></i>
+                Error al cargar las películas. Por favor, intenta nuevamente más tarde.
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row" id="gallery"></div>
+        </div>
+
+        <div class="container">
+            <div id="pagination" class="d-flex justify-content-center"></div>
+        </div>
+
+        <!-- Modal Detalles Película -->
+        <div class="modal fade" id="movieModal" tabindex="-1" aria-labelledby="movieModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="movieModalLabel">Detalles de la Película</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img id="modalPoster" src="" alt="Poster" class="img-fluid">
+                        <h3 id="modalTitle"></h3>
+                        <p id="modalDescription"></p>
+                        <p id="titulo"><strong>Duración:</strong> <span id="modalDuration"></span></p>
+                        <p id="clasificacion"><strong>Clasificación:</strong> <span id="modalRating"></span></p>
+                        <div id="modalFunFacts" class="fun-facts" style="display: none;">
+                            <h4 id="datos">Dato Curioso</h4>
+                            <p id="modalFunFactsText"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="info">
+        <div class="footer-content">
+            <img src="../public/images/marvel.png" alt="Logo Marvel" class="logo-footer">
+            <div class="separator"></div>
+            <div class="footer-text-container">
+                <p class="footer-text">Explora el universo de Spider-Man con nosotros.</p>
+                <p class="footer-copyright">&copy; 2025 SpiderHub. Desarrollado por Anabel Gerez.</p>
+            </div>
+        </div>
+    </footer>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/script.js" defer></script>
+
+</body>
+</html>

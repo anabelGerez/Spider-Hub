@@ -1,0 +1,825 @@
+/* Botón para activar el modo oscuro */
+#darkModeToggle {
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    color: red; /* Color del texto */
+    font-size: 1.2rem; /* Tamaño de fuente */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    padding: 0.5rem; /* Espaciado interno */
+    transition: color 0.3s ease; /* Transición suave para el color */
+}
+
+#darkModeToggle:hover {
+    color: #FFFFFF; /* Cambia el color cuando se pasa el mouse */
+}
+
+
+/* Estilos generales del modo oscuro */
+.dark-mode {
+    background-color: #1a1a1a !important;
+}
+
+/* Mantener la navbar clara */
+.navbar {
+    background-color: #ffffff !important;
+}
+
+/* Estilos específicos del modal en modo oscuro */
+.dark-mode #movieModal .modal-content {
+    background-color: #2d2d2d !important;
+}
+
+.dark-mode #movieModal #movieModalLabel {
+    color: #FFFFFF !important;
+}
+
+.dark-mode #movieModal #modalTitle {
+    color: #FFFFFF !important;
+}
+
+.dark-mode #movieModal #modalDescription {
+    color: #FFFFFF !important;
+}
+
+.dark-mode #movieModal #modalDescription {
+    color: #FFFFFF !important;
+}
+
+.dark-mode #movieModal #modalDuration,
+.dark-mode #movieModal #modalRating,
+.dark-mode #movieModal #modalFunFacts,
+.dark-mode #movieModal strong {
+    color: #FFFFFF !important;
+}
+
+/* Estilos específicos para las películas en modo oscuro */
+.dark-mode .movie-wrapper .movie-title {
+    color: #FFFFFF !important;
+}
+
+.dark-mode .movie-wrapper .movie-year {
+    color: #FFFFFF !important;
+}
+
+.dark-mode .movie-wrapper:hover .movie-title {
+    color: #FF0000 !important;
+    transition: color 0.3s ease;
+}
+
+
+
+.dark-mode .form-control::placeholder {
+    color: #999999 !important;
+}
+
+.dark-mode .form-control:focus,
+.dark-mode .form-select:focus {
+    background-color: #2d2d2d !important;
+    border-color: #666666 !important;
+    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Estilos para las tarjetas en modo oscuro */
+.dark-mode .card {
+    background-color: #2d2d2d !important;
+    border-color: #404040 !important;
+}
+
+.dark-mode .card-title,
+.dark-mode .card-text {
+    color: #FFFFFF !important;
+}
+
+/* Estilos de paginación en modo oscuro */
+.dark-mode .pagination .page-link {
+    background-color: #2d2d2d !important;
+    border-color: #404040 !important;
+    color: #FFFFFF !important;
+}
+
+.dark-mode .pagination .page-link:hover {
+    background-color: #404040 !important;
+    border-color: #666666 !important;
+}
+
+/* Estilo para el elemento activo en la paginación */
+.dark-mode .pagination .page-item.active .page-link {
+    background-color: #FF0000 !important;
+    border-color: #FF0000 !important;
+    color: #FFFFFF !important;
+}
+
+
+/* Estilos para elementos select en modo oscuro */
+.dark-mode select option {
+    background-color: #2d2d2d !important;
+    color: #FFFFFF !important;
+}
+
+/*-------------------------------------------------------NAVBAR---------------------------------------------------------------*/
+/* Navbar fija en la parte superior, con fondo transparente */
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: transparent !important; /* Barra transparente */
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Títulos y enlaces en el navbar con un toque rojo */
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: red !important; /* Color rojo */
+    font-weight: 700; /* Negrita */
+}
+
+/* Estilo de los enlaces en hover */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:active {
+    color: white !important; /* Enlaces en blanco al pasar el mouse */
+}
+
+/*-------------------------------------------------------CARRUSEL---------------------------------------------------------------*/
+.carousel {
+    position: relative;
+    z-index: 1;
+    margin-top: -119px;
+    width: 100%;
+    height: 650px;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.title-caption1 {
+    font-size: 40px;
+    line-height: 56px;
+    font-weight: 700;
+}
+
+.carousel-caption1 {
+    color: white;
+    position: absolute;
+    top: 55%;
+    left: 15%;
+    transform: translateY(-50%);
+    text-align: left;
+    width: 35%;
+    font-size: 20px;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    line-height: 44px;
+}
+
+.title-caption2 {
+    font-size: 40px;
+    line-height: 56px;
+    font-weight: 700;
+}
+
+.carousel-caption2 {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 40%;
+    font-size: 20px;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    line-height: 34px;
+}
+/*-------------------------------------------------------BANNER---------------------------------------------------------------*/
+/* Banner al estilo oscuro con sombra sutil */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 157px;
+    background: #000000;
+    box-shadow: 0px 4px 100px 100px rgba(90, 86, 86, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    margin-top: -4px;
+}
+
+/* Contenedor para el logo y el texto */
+.banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Espacio entre el logo y el texto */
+}
+
+.logo-banner {
+    width: 120px;
+    height: auto;
+}
+
+/* Separador del banner */
+.separator {
+    width: 2px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Texto en el banner */
+.text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #FFFFFF;
+    text-align: left;
+    max-width: 874px;
+}
+
+/* Contenedor para el buscador y filtros */
+.filters-search-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.search-container {
+    flex-grow: 1; /* El buscador se expande */
+    max-width: 400px; /* Limita el ancho */
+}
+
+/* Contenedor para el selector de ordenamiento */
+.sort-container {
+    margin-bottom: 20px;
+}
+
+/* Estilo para el select personalizado */
+.select2-container .select2-selection--single {
+    background-color: white !important;
+    border: 1px solid #ddd !important;
+    border-radius: 25px !important;
+    padding: 8px 12px !important;
+    height: auto !important;
+    font-size: 1rem !important;
+    color: #333 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+/* Estilo para el select al pasar el mouse */
+.select2-container .select2-selection--single:hover {
+    border-color: rgba(73, 69, 79, 0.5) !important; /* Cambia el color del borde al pasar el mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important; /* Sombra más pronunciada al pasar el mouse */
+}
+
+/* Estilo para el menú desplegable */
+.select2-dropdown {
+    border: 1px solid #ddd !important;
+    border-radius: 15px !important; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    background-color: white !important; /* Fondo blanco */
+    overflow: hidden; /* Asegura que el contenido no se desborde */
+}
+
+/* Estilo para las opciones del menú */
+.select2-results__option {
+    padding: 8px 12px !important;
+    font-size: 1rem !important;
+    color: #333 !important;
+    background-color: white !important; /* Fondo blanco */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
+/* Estilo para las opciones al pasar el mouse */
+.select2-results__option--highlighted {
+    background-color: #f8f9fa !important; /* Color de fondo al pasar el mouse */
+    color: #333 !important; /* Color del texto al pasar el mouse */
+}
+
+/* Estilo para el ícono de flecha */
+.select2-container .select2-selection--single .select2-selection__arrow {
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    right: 12px !important;
+}
+
+.select2-container .select2-selection--single .select2-selection__arrow b {
+    border-color: rgba(73, 69, 79, 1) transparent transparent transparent !important;
+}
+
+/* Estilo para la barra de desplazamiento */
+.select2-results__options::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra de desplazamiento */
+}
+
+.select2-results__options::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color de fondo de la pista */
+    border-radius: 4px; /* Bordes redondeados para la pista */
+}
+
+.select2-results__options::-webkit-scrollbar-thumb {
+    background: rgba(73, 69, 79, 0.5); /* Color del thumb (barra deslizante) */
+    border-radius: 4px; /* Bordes redondeados para el thumb */
+}
+
+.select2-results__options::-webkit-scrollbar-thumb:hover {
+    background: rgba(73, 69, 79, 0.8); /* Color del thumb al pasar el mouse */
+}
+
+/*-----------------------------------------FILTADRO Y BARRA DE BUSQUEDA-------------------------------------------------------*/
+/* Estilo para el contenedor de búsqueda */
+.search-container {
+    margin-bottom: 20px;
+}
+
+/* Estilo para el grupo de entrada de búsqueda */
+.input-group {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 25px; /* Bordes redondeados */
+    overflow: hidden;
+    max-width: 400px;
+}
+
+/* Estilo para el input de búsqueda */
+#searchBar {
+    flex: 1;
+    border: none;
+    padding: 8px 12px;
+    font-size: 1rem;
+    color: #333;
+    background-color: transparent;
+    outline: none;
+}
+
+/* Estilo para el botón de búsqueda */
+.btn-search {
+    background-color: white; /* Fondo blanco */
+    border: 1px solid #ddd; /* Borde sutil */
+    border-radius: 0 25px 25px 0; /* Bordes redondeados solo a la derecha */
+    padding: 8px 16px;
+    color: rgba(73, 69, 79, 1); /* Color de la lupa */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-search:hover {
+    background-color: #f8f9fa; /* Color de fondo más claro al pasar el mouse */
+    color: rgba(73, 69, 79, 0.8); /* Color de la lupa más claro al pasar el mouse */
+    border:none;
+}
+
+/* Estilo para el ícono de búsqueda */
+.btn-search .fas.fa-search {
+    font-size: 1rem;
+    color: rgba(73, 69, 79, 1); /* Color de la lupa */
+    border: none;
+}
+
+.btn{
+    background-color: #fff!important;
+    border: none !important;
+}
+
+.btn:hover {
+    background-color: #fff!important;
+    border:none;
+}
+
+/* Estilo para el contenedor del select */
+.sort-container {
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+/* Estilo para el select */
+#sortSelect {
+    background-color: white !important; /* Fondo blanco */
+    border: 1px solid #ddd !important; /* Borde sutil */
+    border-radius: 25px !important; /* Bordes redondeados */
+    padding: 8px 12px !important;
+    font-size: 1rem !important;
+    color: #333 !important; /* Color del texto */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    appearance: none; /* Elimina el estilo por defecto del sistema */
+    -webkit-appearance: none; /* Para navegadores basados en WebKit (Chrome, Safari) */
+    -moz-appearance: none; /* Para Firefox */
+    cursor: pointer;
+    width: 100%; /* Ancho completo */
+    max-width: 300px; /* Ancho máximo */
+}
+
+/* Estilo para las opciones del select */
+#sortSelect option {
+    background-color: white !important; /* Fondo blanco */
+    color: #333 !important; /* Color del texto */
+    padding: 8px 12px !important;
+}
+
+/* Estilo para el ícono de flecha personalizado */
+.sort-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 300px;
+}
+
+.sort-container::after {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    pointer-events: none; /* Evita que el ícono interfiera con el clic */
+    color: rgba(73, 69, 79, 1); /* Color de la flecha */
+    font-size: 0.8rem;
+}
+
+/*-------------------------------------------------------MOVIE SECTION---------------------------------------------------------------*/
+
+.movie-wrapper {
+    margin-bottom: 2rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.movie-wrapper:hover {
+    transform: translateY(-5px);
+}
+
+.movie-poster {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.movie-info {
+    padding: 0.5rem 0;
+    text-align: left;
+}
+
+.movie-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: bolder;
+    text-align: left;
+        color: #2d3436;
+
+}
+
+/* Efecto hover en el título cuando se pasa el mouse sobre el contenedor */
+.movie-wrapper:hover .movie-title {
+    color: red; /* Color rojo al pasar el mouse sobre el contenedor */
+}
+
+.movie-year, .movie-rank, .movie-protagonists {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+    text-align: left;
+}
+
+.movie-wrapper {
+    margin-bottom: 2rem;
+}
+
+.movie-poster {
+    width: 100%;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: transform 0.2s;
+}
+
+.movie-poster:hover {
+    transform: translateY(-5px);
+}
+
+.movie-info {
+    text-align: center;
+}
+
+
+
+.movie-year {
+    color: #636e72;
+    font-size: 0.9rem;
+}
+
+.loading-spinner {
+    width: 3rem;
+    height: 3rem;
+}/*--------------------------------modal----------------------------------------*/
+/* Estilo para el modal pequeño */
+#movieModal .modal-dialog.modal-sm {
+    font-family: montserrat;
+    width: 300px; /* Ancho máximo del modal */
+    margin: 0; /* Elimina los márgenes predeterminados */
+    position: fixed; /* Cambiar a 'fixed' para garantizar que quede en el centro */
+    top: 50%; /* Centrado vertical */
+    left: 50%; /* Centrado horizontal */
+    transform: translate(-50%, -50%); /* Asegura que esté perfectamente centrado */
+    z-index: 1050; /* Asegura que el modal quede por encima de otros elementos */
+}
+
+/* Estilo para el contenido del modal */
+#movieModal .modal-content {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para el cuerpo del modal */
+#movieModal .modal-body {
+    padding: 15px;
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Estilo para la imagen del poster */
+#movieModal #modalPoster {
+    width: 100%;
+    max-width: 120px; /* Tamaño del poster */
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+/* Estilo para el título de la película */
+#movieModal #modalTitle {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Estilo para los detalles (ranking, año, protagonistas, etc.) */
+#movieModal .modal-body p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Estilo para los textos en negrita (etiquetas como "Ranking", "Año", etc.) */
+#movieModal .modal-body strong {
+    color: #000;
+}
+
+/* Estilo para el botón de cierre */
+#movieModal .btn-close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+/* Ajustes para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+    #movieModal .modal-dialog.modal-sm {
+        width: 90%; /* El modal ocupa el 90% del ancho en pantallas más pequeñas */
+        max-width: 100%;
+    }
+
+    #movieModal #modalPoster {
+        max-width: 100px; /* Reducimos el tamaño de la imagen */
+    }
+
+    #movieModal #modalTitle {
+        font-size: 1.2rem; /* Reducimos el tamaño del título */
+    }
+
+    #movieModal .modal-body {
+        flex-direction: column; /* Los elementos se alinean verticalmente */
+        align-items: center; /* Centra el contenido dentro del modal */
+    }
+}
+
+/* -------------------------- Paginación -------------------------- */
+/* Estilos generales para el contenedor de la paginación */
+#pagination .pagination {
+    background-color: white; /* Fondo blanco */
+    border-radius: 20px; /* Bordes redondeados para un look suave */
+    padding: 10px; /* Espaciado interno */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidad */
+}
+
+/* Estilos para los enlaces de cada página */
+#pagination .page-item .page-link {
+    border: none; /* Sin bordes */
+    color: #333; /* Color de texto gris oscuro */
+    margin: 0 5px; /* Un poco de espacio entre los elementos */
+    border-radius: 50%; /* Hace que los enlaces sean círculos */
+    width: 40px; /* Ancho de los círculos */
+    height: 40px; /* Altura de los círculos */
+    display: flex;
+    align-items: center; /* Centra el texto en el círculo */
+    justify-content: center; /* Centra el texto en el círculo */
+    text-decoration: none; /* Quita el subrayado del texto */
+}
+
+/* Estilo para el enlace activo (el que está seleccionado) */
+#pagination .page-item.active .page-link {
+    background-color: red; /* Fondo rojo para destacar */
+    color: white; /* Texto blanco para contraste */
+}
+
+/* Estilo para los enlaces deshabilitados (cuando no se pueden clicar) */
+#pagination .page-item.disabled .page-link {
+    pointer-events: none; /* Desactiva el clic en este enlace */
+}
+
+/* Efecto hover para los enlaces (cuando pasas el ratón) */
+#pagination .page-item:not(.active):not(.disabled) .page-link:hover {
+    background-color: #f0f0f0; /* Fondo gris claro cuando pasas el ratón */
+}
+
+/* -------------------------- Footer -------------------------- */
+/* Estilos generales para el footer (pie de página) */
+.footer {
+    position: relative;
+    width: 100%; /* Abarca todo el ancho */
+    height: auto; /* Se ajusta según el contenido */
+    background: #000000; /* Fondo negro para hacer contraste */
+    box-shadow: 0px 4px 100px 100px rgba(90, 86, 86, 0.25); /* Sombra grande y suave */
+    display: flex;
+    align-items: center; /* Centra los elementos verticalmente */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    padding: 20px; /* Espaciado interno para que no se vea apretado */
+    margin-top: 20px; /* Un poco de espacio arriba */
+}
+
+/* Contenedor para centrar el logo, el separador y el texto */
+.footer-content {
+    display: flex;
+    align-items: center; /* Centra los elementos verticalmente */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    gap: 20px; /* Espacio entre los elementos */
+}
+
+/* Estilo del logo en el footer */
+.logo-footer {
+    width: 100px; /* Ajusta el tamaño del logo */
+    height: auto; /* Mantiene la proporción del logo */
+}
+
+/* El separador entre el logo y el texto */
+.separator {
+    width: 2px; /* Estilo del separador */
+    height: 50px; /* Alto del separador */
+    background: rgba(255, 255, 255, 0.5); /* Blanco semi-transparente */
+}
+
+/* Contenedor para el texto (información y copyright) */
+.footer-text-container {
+    display: flex;
+    flex-direction: column; /* Organiza el texto en columna */
+    gap: 5px; /* Un poco de espacio entre el texto y el copyright */
+}
+
+/* Estilo para el texto adicional en el footer */
+.footer-text {
+    font-family: 'Montserrat', sans-serif; /* Tipo de letra bonito */
+    font-size: 14px; /* Tamaño de texto cómodo */
+    font-weight: 500; /* Un poco de grosor en el texto */
+    color: #FFFFFF; /* Blanco para destacar sobre el fondo negro */
+    text-align: left; /* Alineado a la izquierda */
+    margin: 0; /* Sin márgenes innecesarios */
+}
+
+/* Estilo para el texto de copyright */
+.footer-copyright {
+    font-family: 'Montserrat', sans-serif; /* Mismo tipo de letra */
+    font-size: 12px; /* Un tamaño más pequeño */
+    font-weight: 400; /* Menos peso en el texto */
+    color: rgba(255, 255, 255, 0.8); /* Blanco con un toque de transparencia */
+    text-align: left; /* Alineado a la izquierda */
+    margin: 0; /* Sin márgenes */
+}
+
+
+
+/*---------------------------------responsive---------------------------------------------------------------*/
+
+
+/* Media queries para el banner */
+@media (max-width: 768px) {
+    .banner {
+        height: auto;
+        padding: 20px;
+        margin-top: -18px; /* Ajusta según lo que necesites */
+    }
+
+    .banner-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .logo-banner {
+        width: 80px; /* Logo más pequeño en móvil */
+    }
+
+    .separator {
+        display: none; /* Ocultar separador en móvil */
+    }
+
+    .text {
+        font-size: 14px;
+        text-align: center;
+        padding: 0 10px;
+    }
+}
+
+
+/* Ajustes en móviles */
+@media (max-width: 768px) {
+  
+
+    .carousel-caption1,
+    .carousel-caption2 {
+        position: absolute;
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        top: 70%;
+        padding: 10px;
+    }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .carousel-caption1,
+    .carousel-caption2 {
+        top: 65%; /* Baja más el texto */
+    }
+
+    .title-caption1,
+    .title-caption2 {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .carousel-caption1 p,
+    .carousel-caption2 p {
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
+
+
+/* Ajustes para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+    #movieModal .modal-dialog.modal-sm {
+        width: 90%; /* El modal ocupa el 90% del ancho en pantallas más pequeñas */
+        max-width: 100%; /* Elimina el límite de tamaño */
+        margin-top: 20PX; /* Separación superior más grande */
+    }
+
+    #movieModal #modalPoster {
+        max-width: 100px; /* Reducimos el tamaño de la imagen */
+    }
+
+    #movieModal #modalTitle {
+        font-size: 1.2rem; /* Reducimos el tamaño del título */
+    }
+
+    #movieModal .modal-body {
+        flex-direction: column; /* Los elementos se alinean verticalmente */
+        align-items: center; /* Centra el contenido dentro del modal */
+    }
+}
+
+/* Ajustes para pantallas muy pequeñas (móviles pequeños) */
+@media (max-width: 480px) {
+    #movieModal .modal-dialog.modal-sm {
+        height: 70%;
+        width: 95%; /* El modal ocupa el 95% del ancho en pantallas muy pequeñas */
+        max-width: 100%;
+        margin-top: 20rem; /* Separación superior más grande */
+    }
+
+    #movieModal #modalPoster {
+        max-width: 80px; /* Imagen más pequeña en dispositivos muy pequeños */
+    }
+
+    #movieModal #modalTitle {
+        font-size: 1.1rem; /* Título aún más pequeño */
+    }
+
+    #movieModal .modal-body p {
+        font-size: 0.8rem; /* Texto más pequeño */
+    }
+}
