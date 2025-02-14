@@ -18,7 +18,7 @@ Este es un sitio web dedicado a las películas de Spider-Man, con un diseño min
 ```
 
 ## 🎨 Diseño en Figma
-![Spider-Man Movies](../public/figma.png)
+![Spider-Man Movies](./public/figma.png)
 
 
 ## 📌 Optimización y Rendimiento
@@ -32,7 +32,7 @@ Este es un sitio web dedicado a las películas de Spider-Man, con un diseño min
 ## ⚙️ Instalación y Configuración
 1. Clonar el repositorio:
    ```bash
-   git clone https://github.com/usuario/spiderman-movies.git
+   git clone git remote add origin https://github.com/anabelGerez/Spider-Hub.git
    ```
 
 ## 📜 Licencia
