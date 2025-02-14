@@ -18,7 +18,7 @@ Este es un sitio web dedicado a las películas de Spider-Man, con un diseño min
 ```
 
 ## 🎨 Diseño en Figma
-![Spider-Man Movies](./public/figma.png)
+![Spider-Man Movies](./public/images/Figma.png)
 
 
 ## 📌 Optimización y Rendimiento
